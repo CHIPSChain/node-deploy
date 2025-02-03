@@ -20,7 +20,15 @@ sleepBeforeStart=10
 # stop geth client
 function exit_previous() {
     ValIdx=$1
-    ps -ef  | grep geth$ValIdx | grep mine |awk '{print $2}' | xargs kill
+    PIDS=$(ps -ef | grep "geth$ValIdx" | grep "mine" | awk '{print $2}')
+    
+    if [[ -n "$PIDS" ]]; then
+        echo "Stopping processes: $PIDS"
+        echo "$PIDS" | xargs kill
+    else
+        echo "No geth$ValIdx process found."
+    fi
+    
     sleep ${sleepBeforeStart}
 }
 
