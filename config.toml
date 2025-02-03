@@ -25,7 +25,7 @@ ValidatorCommission = 1000
 BidSimulationLeftOver = 50000000
 
 [[Eth.Miner.Mev.Builders]]
-Address = "0x04d63aBCd2b9b1baa327f2Dda0f873F197ccd186"
+Address = "0x29807D2fc0aF1233Bf97b826b5DdC05B732FF602"
 
 [Eth.TxPool]
 Locals = []
